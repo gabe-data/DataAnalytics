@@ -25,6 +25,10 @@ LIMIT 1;
 SELECT sum(hr) AS career_hr
 FROM barry_bonds bb;
 
+-- Create a table where there is a running total of home runs throughout his career.
+SELECT "year", hr, sum(hr) OVER(ORDER BY YEAR asc) AS career_hr
+FROM barry_bonds bb 
+
 -- On average, how many at-bats would it take Barry Bonds to hit a home run?
 SELECT round(sum(ab)::numeric/sum(hr),2) AS ab_per_hr
 FROM barry_bonds bb;
@@ -79,7 +83,6 @@ CASE
 END AS better_or_worse
 FROM bonds_sabometrics bs 
 ORDER BY YEAR;
-
 
 
 
