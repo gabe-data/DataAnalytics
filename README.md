@@ -1,1 +1,3 @@
-This is a SQL project that analyzes the career of baseball legend Barry Bonds. My love for baseball, statistics, and analytics was what drove the idea behind this project.
+This is a SQL project that analyzes the career of baseball legend Barry Bonds. My love for baseball, statistics, and analytics was what drove the idea behind this project. 
+
+I first downloaded three separate tables from baseballreference.com One was Bonds' career stats, his advanced stats, and finally his sabometrics stats. These were exported to Excel where I fixed little things like the column titles and formatting of the decimals. 
