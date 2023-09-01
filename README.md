@@ -1,0 +1,1 @@
+This is a SQL project that analyzes the career of baseball legend Barry Bonds. My love for baseball, statistics, and analytics was what drove the idea behind this project.
