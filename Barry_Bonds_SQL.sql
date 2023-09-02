@@ -31,6 +31,18 @@ END AS better_or_worse
 FROM bonds_sabometrics bs 
 ORDER BY YEAR;
 
+-- How many total home runs did he hit in years he was awarded MVP title vs. years he wasn't? 
+WITH yes_mvp AS (
+SELECT sum(hr) AS total
+FROM barry_bonds bb 
+WHERE mvp = 'Yes'),
+no_mvp AS (
+SELECT sum(hr) AS total
+FROM barry_bonds bb2
+WHERE mvp='No')
+SELECT yes_mvp.total AS mvp_total, no_mvp.total AS no_mvp_total
+FROM yes_mvp, no_mvp
+
 -- What is the most home runs Barry Bonds ever hit in a single season? 
 SELECT YEAR, team, hr 
 FROM barry_bonds bb
@@ -94,3 +106,7 @@ FROM barry_bonds bb
 WHERE obp_leader = 'Yes'
 ORDER BY earned_walks DESC 
 
+-- How did his stolen bases trend compare to his age? 
+SELECT age, YEAR, sb
+FROM barry_bonds bb 
+ORDER BY age 
